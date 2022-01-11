@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+    // 原型prototype
+    // 所有函数都具有的一个属性
+    // 函数得到函数原型 commonFun.prototype
+    // 隐式原型
+
+    function commonFun() {
+      console.log('1');
+    }
+
+    window.Object.prototype.aa = function () {
+      return this + 1   //返回 + 1的结果
+    }
+
+    let num = 3
+    console.log(num.aa());
+    // constructor属性也是对象才拥有的，它是从一个对象指向一个函数，含义就是指向该对象的构造函数
+    console.log(commonFun.prototype.constructor);
+  </script>
+</body>
+
+</html>

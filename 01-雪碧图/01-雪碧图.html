@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>雪碧图</title>
+  <script>
+    // 有两种方法：
+    // 方法一：设置背景图，使用background-position属性
+    // 方法二：外面套一层div，使用'overflow:hidden;'属性。image使用position:relative
+  </script>
+  <style>
+    .box1 {
+      width: 600px;
+      height: 320px;
+      border: solid 1px #000;
+      padding: 9px;
+      box-sizing: border-box;
+    }
+
+    .box2 {
+      width: 350px;
+      height: 300px;
+      border: solid 1px #000;
+    }
+
+    .box3 {
+      width: 320px;
+      height: 100px;
+      margin: 10px auto;
+      border: solid 1px rgb(214, 19, 19);
+    }
+
+    /* .box4 {
+      width: 80px;
+      height: 80px;
+      margin: 10px;
+      background: url(./01.png);
+      background-position: 237px 209px;
+    } */
+
+    .box5 {
+      width: 80px;
+      height: 80px;
+      margin: 10px;
+      overflow: hidden;
+      box-sizing: border-box;
+    }
+
+    .image1 {
+      position: relative;
+      top: -123px;
+      left: -144px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box1">
+    <div class="box2">
+      <div class="box3">
+        <!-- <div class="box4"></div> -->
+        <div class="box5">
+          <img class="image1" src="./01.png" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

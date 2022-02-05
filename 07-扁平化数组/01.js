@@ -9,6 +9,6 @@ function iterTree2(arr) {
 }
 
 // 方法二：直接使用ES6中的方法
-// console.log(arr1.flat(Infinity)); 
+console.log(arr1.flat(Infinity)); 
 
-console.log(iterTree2(arr1));
+// console.log(iterTree2(arr1));

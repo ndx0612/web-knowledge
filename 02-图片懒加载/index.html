@@ -54,29 +54,8 @@
         }
       }
     }
-
-    // function throttle(func, wait) {
-    //   var context, args;
-    //   var previous = 0;
-
-    //   return function () {
-    //     var now = +new Date();
-    //     context = this;
-    //     args = arguments;
-    //     if (now - previous > wait) {
-    //       func.apply(context, args);
-    //       previous = now;
-    //     }
-    //   }
-    // }
-
-    // onload()初始化完成后触发，onscroll()在滚动条滚动的时候触发
-
-    // var throttled = _.throttle(lazyLoad(imgs), 1000);
-    // console.log(typeof(throttled));
     window.onload = window.onscroll = function () {
       lazyLoad(imgs);
-      // throttled();
     }
   </script>
 </body>

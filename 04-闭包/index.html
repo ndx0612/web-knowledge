@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 
 <head>
   <meta charset="UTF-8">
@@ -11,9 +11,17 @@
 <body>
   <script>
     function books() {
-      var book = "书本"
+      console.log(this);
+      var book = 0;
+      return function () {
+        book++;
+        console.log(book);
+      }
     }
-    console.log(book);
+    var bag = books();
+    bag();
+    bag();
+
   </script>
 </body>
 

@@ -22,18 +22,20 @@
 // 案例3
 
 function books() {
-  var book = '1';
+  console.log(this);
+  var book = 0;
   return function () {
+    book++;
     console.log(book);
-    console.log(typeof(bag));
   }
 }
 var bag = books();
-bag()
+bag();
+bag();
 
 // 全局对象：books、bag
 // books对象：book
-// 匿名函数：' ' 
+// 匿名函数：' '
 
 // 案例四
 

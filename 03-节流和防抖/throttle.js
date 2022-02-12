@@ -1,23 +1,17 @@
-// 节流
-function myThrottle(fun, delay) {
-  let timer = null;
+// 节流：点击多次，每间隔1s发送一次请求
 
-  let startTime = Date.now();
-
+function throttle(fn, timer) {
+  let isRun = true
   return function () {
-
-    let curTime = Date.now();
-    let remain = delay - (curTime - startTime);
-    let that = this;
-    let args = arguments;
-    
-    clearTimeout(timer);
-
-    if (remain <= 0) {
-      fun.apply(that, args);
-      startTime = Date.now();
-    } else {
-      timer = setTimeout(fun, remain);
+    if (!isRun) {
+      //休息时间 暂不接客
+      return false
     }
+    // 工作时间，执行函数并且在间隔期内把状态位设为无效
+    isRun = false
+    setTimeout(() => {
+      fn()
+      isRun = true;
+    }, timer)
   }
 }

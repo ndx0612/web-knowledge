@@ -1,16 +1,4 @@
 // 防抖
-function myDebounce(fn, wait) {
-  let timer = null;
-  return function () {
-    let args = arguments, that = this;
-    timer && clearTimeout(timer);
-    timer = setTimeout(function () {
-      fn.apply(that, args)
-    }, wait)
-  }
-}
-
-// 方法二
 
 function debounce(fn, delay) {
   let timer = null //借助闭包

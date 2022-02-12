@@ -27,16 +27,10 @@
     <img data-src="./08.jpg" alt="">
     <img data-src="./09.jpg" alt="">
   </div>
-  <script src="https://cdn.bootcdn.net/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script>
   <script>
-    // 1、获取可视区域高度window.innerHeight
-    // 2、获取滑块高度
-    // 3、如果屏幕高度加上鼠标滚动的高度大于这张图片到顶部的高度,图片的src则获取路径
-
     var imgs = document.querySelectorAll('img');
 
     // 获取图片到顶部的高度
-
     function getTop(e) {
       return e.offsetTop;
     }
@@ -44,16 +38,16 @@
     function lazyLoad(imgs) {
       var H = window.innerHeight; // 获取可视区域高度
       var S = Math.floor(document.documentElement.scrollTop || document.body.scrollTop); // 获取滑块高度
-      // console.log(S);
-
       // 如果屏幕高度加上鼠标滚动的高度大于这张图片到顶部的高度,图片的src则获取路径
-
       for (var i = 0; i < imgs.length; i++) {
         if (H + S > getTop(imgs[i])) {
+          console.log(i);
           imgs[i].src = imgs[i].getAttribute('data-src');
         }
       }
     }
+
+    // 当屏幕滚动的时候执行
     window.onload = window.onscroll = function () {
       lazyLoad(imgs);
     }
